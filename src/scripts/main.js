@@ -3,22 +3,25 @@ import * as functions from './modules/functions.js';
 // Constans
 const STICKY_START_SCROLL = 40,
   HEADER_SCROLLED_CLASS = 'header_scrolled',
-  MENU_LINK_ACTIVE = 'main-nav__link_active',
+  MENU_LINK_ACTIVE = 'header-nav__link_active',
   MENU_OPENED_CLASS = 'burger-menu_opened',
   SCROLL_STEP = 0.1;
 
 // Toggle menu active
 const toggleMenu = item => {
-  const logo = document.querySelector('.logo'),
-    arrows = document.querySelectorAll('.arrow-link'),
+  const logo = document.querySelector('.header-nav__logo'),
+    // arrows = document.querySelectorAll('.arrow-link'),
     links = document.querySelectorAll(item);
 
-  logo.addEventListener('click', () => links.forEach(link => link.classList.remove(MENU_LINK_ACTIVE)));
+  logo.addEventListener('click', () => {
+    links.forEach(link => link.classList.remove(MENU_LINK_ACTIVE));
+    links[0].classList.add(MENU_LINK_ACTIVE);
+  });
 
-  arrows.forEach(link =>
-    link.addEventListener('click', () =>
-      links.forEach(link =>
-        link.classList.remove(MENU_LINK_ACTIVE))));
+  // arrows.forEach(link =>
+  //   link.addEventListener('click', () =>
+  //     links.forEach(link =>
+  //       link.classList.remove(MENU_LINK_ACTIVE))));
 
   links.forEach(link => {
     link.addEventListener('click', () => {
@@ -107,7 +110,7 @@ const scrollTo = () => {
 // scrollTo();
 // stickyHeader();
 // window.addEventListener('scroll', () => stickyHeader());
-// toggleMenu('.main-nav__link');
+toggleMenu('.header-nav__link');
 // burgerMenu();
 
 functions.isWebp();

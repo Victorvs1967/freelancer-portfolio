@@ -3,26 +3,157 @@
 @import 'reset'
 @import 'mixins'
 
+// Common
 html,
 body
   scroll-behavior: smooth
   font-family: 'Poppins', sans-serif
-  font-weight: 200
+  font-weight: 300
   font-size: 10px
-  line-height: 1.6
+  line-height: 2
 body
   height: 100vh
   font-size: 1.4rem
-  line-height: 1.6
+  color: $main-dark
+a
+  color: inherit
+  transition: .4s opacity
+  -webkit-transition: .4s opacity
+  &:hover
+    opacity: .6
+h1,
+h2,
+h3,
+h4
+  font-weight: 600
+  line-height: 1.5
+h1
+  font-size: 4.4rem
+h2
+  font-size: 3.4rem
+h3
+  font-size: 2.4rem
+h4
+  font-size: 1.8rem
+  font-weight: 300
+
 .container
-  padding: 0 21.5rem
+  max-width: calc(117rem + 3rem * 2)
+  margin: 0 auto
+  padding: 0 3rem
+
+// Header
 .header
   height: 77rem
-  padding: 4.6rem 0 0
-  background: #F1F1F1
-  &__title
-    font-weight: 700
-    font-size: 3rem
+  padding: 4.6rem 0
+  background: $main-background
+  &-nav
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+    margin-bottom: 7.6rem
+    &__logo
+      padding: 0 1.2rem 0.4rem
+      position: relative
+      font-size: 3.2rem
+      font-weight: 700
+      line-height: 1
+      &::after
+        content: ''
+        display: inline-block
+        width: 0.8rem
+        height: 0.8rem
+        border-radius: 50%
+        background: #FDA300
+        position: absolute
+        bottom: 0
+        right: 0.1rem
+    &__list
+      display: flex
+      justify-content: space-between
+      align-items: center
+      column-gap: 5rem
+    &__link
+      font-size: 1.4rem
+      font-weight: 500
+      line-height: 1.6
+      &_active
+        opacity: .6
+  &-content
+    display: flex
+    justify-content: space-between
+    column-gap: 3rem
+    &__text
+      max-width: 50rem
+      padding-top: calc(20rem - 7.6rem)
+    &__title
+      margin-bottom: 2rem
 
-  
+// Services
+.services
+  &-container
+    display: flex
+    justify-content: space-between
+    column-gap: 3rem
+    padding: 9rem 0
+  &__item
+    max-width: 37rem
+  &__icon
+    width: 6.8rem
+    height: 6.8rem
+    margin-bottom: 3rem
+  &__title
+    text-transform: uppercase
+    margin-bottom: 1rem
+
+// Portfolio
+.portfolio
+  background: $main-background
+  &-container
+    padding: 9rem 0
+  &__title
+    margin-bottom: 7rem
+    text-align: center
+  &__item
+    display: flex
+    flex-direction: column
+    align-items: center
+  &__item:not(:last-child)
+    margin-bottom: 9rem
+  &__image
+    margin-bottom: 4rem
+  &__link
+    text-decoration: underline
+
+// Contacts
+.contacts
+  &-container
+    max-width: 34rem
+    margin: 0 auto
+    padding: 9rem 0
+    text-align: center
+  &__title
+    margin-bottom: 4rem
+  &__button
+    margin: 4rem 0 8rem
+    padding: .8rem 2.2rem
+    border-radius: 2.2rem
+    font-famili: 'Poppins', sans-serif
+    font-size: 1.8rem
+    font-weight: 300
+    color: $main-lite
+    background: $main-dark
+  &__socials
+    height: 4rem
+    display: flex
+    justify-content: space-between
+    margin-bottom: 4rem
+  &__icon
+    width: 4rem
+    heght: 4rem
+  &__text
+    line-height: 1.5
+    text-align: center
+    color: #828282
+
 @import 'media'

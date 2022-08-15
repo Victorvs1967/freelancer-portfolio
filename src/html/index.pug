@@ -4,5 +4,36 @@ block title
   title Freelancer Portfolio 
 
 block content
-  main.main
-    .main-container
+  section.services#services
+    .container
+      .services-container
+        each service in services
+          .services__item
+            +svg-icon(service.icon, 'services__icon')
+            h3.services__title= service.title
+            p.services__description= service.desc
+  section.portfolio#portfolio
+    .container 
+      .portfolio-container
+        h2.portfolio__title Portfolio
+        each project in portfolio 
+          .portfolio__item
+            img(src= project.image, alt= project.title).portfolio__image
+            h4.portfolio__link
+              a(href= project.link)= project.title 
+  section.contacts#contacts
+    .container
+      .contacts-container
+        h2.contacts__title Contacts
+        h4.contacts__description
+          | Want to know more or just chat?<br>You are welcome!
+        button.contacts__button Send message
+        .contacts__socials
+          +svg-icon('LinkedIn-icon', 'contacts__icon')
+          +svg-icon('Instargam-icon', 'contacts__icon')
+          +svg-icon('Behance-icon', 'contacts__icon')
+          +svg-icon('Dribble-icon', 'contacts__icon')
+        p.contacts__text
+          | Like me on<br>LinkedIn, Instagram, Behance, Dribble
+
+        

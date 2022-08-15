@@ -1,3 +1,22 @@
 header.header
-  .container
-    h1.header__title HEADER
+  .container.header__container
+    .header-nav 
+      a(href="#!").header-nav__logo Victor
+      nav.header-nav__nav
+        ul.header-nav__list
+          li.header-nav__item
+            a(href="/").header-nav__link.header-nav__link_active Home
+          li.header-nav__item
+            a(href="#portfolio").header-nav__link Works
+          li.header-nav__item
+            a(href="#services").header-nav__link Services
+          li.header-nav__item
+            a(href="#!").header-nav__link About
+          li.header-nav__item
+            a(href="#contacts").header-nav__link Contacts
+    .header-content
+      .header-content__text
+        h1.header-content__title Kelvin Kramer<br>Designer&nbsp;&amp; Developer
+        p.header-content__description
+          |I’m a portrait, fashion and lifestyle photographer living In New York City. During my thirteen year tenure here.
+      img(src="@img/hero.png", alt="hero").header-content__image
