@@ -134,24 +134,35 @@ h4
     text-align: center
   &__title
     margin-bottom: 4rem
-  &__button
+  &__btn
     margin: 4rem 0 8rem
-    padding: .8rem 2.2rem
-    border-radius: 2.2rem
+    padding: 1rem 2.5rem
+    border-radius: 2.5rem
     font-famili: 'Poppins', sans-serif
     font-size: 1.8rem
     font-weight: 300
     color: $main-lite
     background: $main-dark
+    transition: .4s opacity top
+    -webkit-transition: .4s opacity top
+    &:hover,
+    &:focus
+      opacity: .7
+    &:active
+      position: relative
+      top: 1px
+      opacity: 1
   &__socials
     height: 4rem
     display: flex
-    justify-content: space-between
+    justify-content: center
+    align-items: center
+    column-gap: 6rem
     margin-bottom: 4rem
   &__icon
     width: 4rem
     heght: 4rem
-  &__text
+  &_footer
     line-height: 1.5
     text-align: center
     color: #828282

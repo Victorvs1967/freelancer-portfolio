@@ -27,13 +27,17 @@ block content
         h2.contacts__title Contacts
         h4.contacts__description
           | Want to know more or just chat?<br>You are welcome!
-        button.contacts__button Send message
+        button.contacts__btn Send message
         .contacts__socials
-          +svg-icon('LinkedIn-icon', 'contacts__icon')
-          +svg-icon('Instargam-icon', 'contacts__icon')
-          +svg-icon('Behance-icon', 'contacts__icon')
-          +svg-icon('Dribble-icon', 'contacts__icon')
-        p.contacts__text
+          a(href="#!") 
+            +svg-icon('LinkedIn-icon', 'contacts__icon')
+          a(href="#!") 
+            +svg-icon('Instargam-icon', 'contacts__icon')
+          a(href="#!") 
+            +svg-icon('Behance-icon', 'contacts__icon')
+          a(href="#!") 
+            +svg-icon('Dribble-icon', 'contacts__icon')
+        p.contacts__footer
           | Like me on<br>LinkedIn, Instagram, Behance, Dribble
 
         
