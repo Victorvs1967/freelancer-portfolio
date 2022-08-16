@@ -15,6 +15,7 @@ body
   height: 100vh
   font-size: 1.4rem
   color: $main-dark
+  overflow-x: hidden
 a
   color: inherit
   transition: .4s opacity
@@ -36,7 +37,6 @@ h3
 h4
   font-size: 1.8rem
   font-weight: 300
-
 .container
   max-width: calc(117rem + 3rem * 2)
   margin: 0 auto
@@ -47,11 +47,24 @@ h4
   height: 77rem
   padding: 4.6rem 0
   background: $main-background
+  position: relative
   &-nav
+    position: sticky
+    margin-top: 2rem
+    padding: 2rem 0
+    top: 0
+    left: 0
     display: flex
     justify-content: space-between
     align-items: flex-end
-    margin-bottom: 7.6rem
+    transition: .4s background
+    -webkit-transition: .4s background
+    &_scrolled
+      width: 100%
+      margin-top: 0
+      padding: 2rem 6rem
+      position: fixed
+      background: rgba(0, 0, 0, 0.2)
     &__logo
       padding: 0 1.2rem 0.4rem
       position: relative
@@ -80,6 +93,8 @@ h4
       &_active
         opacity: .6
   &-content
+    padding-top: 11rem
+    margin-top: 2rem
     display: flex
     justify-content: space-between
     column-gap: 3rem
@@ -166,5 +181,16 @@ h4
     line-height: 1.5
     text-align: center
     color: #828282
+
+// Burger
++burger($main-dark, 3.3rem)
+.burger-menu__control
+  display: none
+  top: 2rem
+  left: 100%
+  transition: .4s all
+  -webkit-transition: .4s all
+  &:hover
+    opacity: .6
 
 @import 'media'

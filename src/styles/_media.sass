@@ -1,0 +1,62 @@
+@media (max-width: 920px)
+  .container
+    max-width: calc(100% + 3rem * 2)
+  .burger-menu__control
+    display: block
+  .header
+    height: initial
+    padding: 4rem 0 0
+    &-nav
+      &_scrolled
+        padding: 2rem
+      &__nav
+        display: none
+        &_opened
+          display: block
+          position: fixed
+          top: 0
+          left: 0
+          bottom: 0
+          right: 0
+          background: #fff
+      &__list
+        flex-direction: column
+        align-items: initial
+        row-gap: 3rem
+        padding: 4.6rem 3rem
+      &__link
+        font-size: 3.4rem
+        font-weight: 600
+        opacity: .5
+        &_active
+          opacity: 1
+    &-content
+      flex-direction: column
+      align-items: center
+      row-gap: 2rem
+      padding-top: 5rem
+      &__text
+        padding: 0
+  .services
+    &-container
+      flex-direction: column
+      align-items: center
+      row-gap: 6rem
+      padding: 6rem 0
+  .portfolio
+    &-container
+      padding: 6rem 0
+    &__item:not(:last-child)
+      margin-bottom: 5.5rem
+  .contacts
+    &-container
+      padding: 6rem 0
+    &__btn
+      margin: 2rem 0 7rem
+    &__socials
+      margin-bottom: 2rem
+
+@media (max-width: 480px)
+  .burger-menu__control
+    left: 88%
+

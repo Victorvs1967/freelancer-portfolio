@@ -2,13 +2,13 @@ import * as functions from './modules/functions.js';
 
 // Constans
 const STICKY_START_SCROLL = 40,
-  HEADER_SCROLLED_CLASS = 'header_scrolled',
+  HEADER_SCROLLED_CLASS = 'header-nav_scrolled',
   MENU_LINK_ACTIVE = 'header-nav__link_active',
-  MENU_OPENED_CLASS = 'burger-menu_opened',
+  MENU_OPENED_CLASS = 'header-nav__nav_opened',
   SCROLL_STEP = 0.1;
 
 // Toggle menu active
-const toggleMenu = item => {
+const activeMenu = item => {
   const logo = document.querySelector('.header-nav__logo'),
     // arrows = document.querySelectorAll('.arrow-link'),
     links = document.querySelectorAll(item);
@@ -33,31 +33,33 @@ const toggleMenu = item => {
 
 // Burger menu support
 const body = document.querySelector('body'),
-  control = document.querySelector('.burger-menu__control'),
-  burger = document.querySelector('.burger__item'),
-  close = document.querySelector('.close__item'),
-  links = document.querySelectorAll('.main-nav__link');
+      control = document.querySelector('.burger-menu__control'),
+      burger = document.querySelector('.burger__item'),
+      close = document.querySelector('.close__item'),
+      menu = document.querySelector('.header-nav__nav'),
+      links = document.querySelectorAll('.header-nav__link');
 
-const openMenu = () => {
-  body.classList.add(MENU_OPENED_CLASS);
-  burger.style.display = 'none';
-  close.style.display = 'block';
-};
+const toggleMenuBtn = () => {
+  if (menu.classList.toggle(MENU_OPENED_CLASS)) {
+    burger.style.display = 'none';
+    close.style.display = 'block';
+    body.style.overflow = 'hidden';
 
-const closeMenu = () => {
-  body.classList.remove(MENU_OPENED_CLASS);
-  burger.style.display = 'block';
-  close.style.display = 'none';
-};
+  } else {
+    burger.style.display = 'block';
+    close.style.display = 'none';
+    body.style.overflow = 'initial';
+  }
+} 
 
 const burgerMenu = () => {
-  control.addEventListener('click', () => body.classList.contains(MENU_OPENED_CLASS) ? closeMenu() : openMenu());
-  // links.forEach(link => link.addEventListener('click', () => closeMenu()));
+  control.addEventListener('click', () => toggleMenuBtn());
+  links.forEach(link => link.addEventListener('click', () => toggleMenuBtn()));
 };
 
 // Sticky header
 const stickyHeader = () => {
-  const header = document.querySelector('.header');
+  const header = document.querySelector('.header-nav');
   if (
     window.scrollY >= STICKY_START_SCROLL
     && !header.classList.contains(HEADER_SCROLLED_CLASS)
@@ -108,9 +110,9 @@ const scrollTo = () => {
 
 // Initial functions
 // scrollTo();
-// stickyHeader();
-// window.addEventListener('scroll', () => stickyHeader());
-toggleMenu('.header-nav__link');
-// burgerMenu();
+stickyHeader();
+window.addEventListener('scroll', () => stickyHeader());
+activeMenu('.header-nav__link');
+burgerMenu();
 
 functions.isWebp();
