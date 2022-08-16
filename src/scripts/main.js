@@ -44,7 +44,6 @@ const toggleMenuBtn = () => {
     burger.style.display = 'none';
     close.style.display = 'block';
     body.style.overflow = 'hidden';
-
   } else {
     burger.style.display = 'block';
     close.style.display = 'none';

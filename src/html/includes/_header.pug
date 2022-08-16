@@ -23,4 +23,6 @@ header.header
         h1.header-content__title Kelvin Kramer<br><span>Designer&nbsp;&amp; Developer</span>
         p.header-content__description
           | I’m a portrait, fashion and lifestyle photographer living In New York City. During my thirteen year tenure here.
-      img(src="@img/hero.png", alt="hero").header-content__image
+      picture.header-content__image
+        source(media="(max-width: 520px)" srcset="@img/hero-mobile.png")
+        img(src="@img/hero.png", alt="hero")
