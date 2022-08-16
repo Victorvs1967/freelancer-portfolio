@@ -1,12 +1,16 @@
 @media (max-width: 920px)
+  h1
+    font-size: 3.4rem
   .container
     max-width: calc(100% + 3rem * 2)
   .burger-menu__control
     display: block
+    left: 90vw
   .header
     height: initial
-    padding: 4rem 0 0
+    padding: 0
     &-nav
+      padding: 2rem
       &_scrolled
         padding: 2rem
       &__nav
@@ -34,9 +38,12 @@
       flex-direction: column
       align-items: center
       row-gap: 2rem
-      padding-top: 5rem
+      padding: 12rem 0 0
       &__text
         padding: 0
+      &__title
+        span
+          font-size: 2.8rem
   .services
     &-container
       flex-direction: column
@@ -56,7 +63,6 @@
     &__socials
       margin-bottom: 2rem
 
-@media (max-width: 480px)
+@media (max-width: 520px)
   .burger-menu__control
-    left: 88%
-
+    left: 85vw
